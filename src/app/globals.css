@@ -1,12 +1,14 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --contrast: #333333;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --contrast: #cccccc;
   }
 }
 
@@ -41,9 +43,53 @@ a {
   color: inherit;
   text-decoration: none;
 }
+p {
+  margin:0 0.2rem;
+}
 
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
+}
+
+main {
+    width: 100%;
+    max-width: 75rem;
+    margin: 1rem auto;
+    padding: 1rem;
+}
+
+section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.2rem;
+}
+
+article {
+    padding: 1rem;
+    border: 1px solid transparent;
+    border-radius: 0.5rem;
+    background-color: color-mix(in lab, var(--contrast), var(--background) 90%);
+    color: var(--foreground);
+    width: 100%;
+}
+
+button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.25rem;
+    background-color: var(--contrast);
+    color: var(--background);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+select {
+    padding: 0.5rem;
+    border: 1px solid var(--contrast);
+    border-radius: 0.25rem;
+    background-color: var(--background);
+    color: var(--foreground);
+    cursor: pointer;
 }
